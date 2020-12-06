@@ -13,3 +13,5 @@ A simple React bookshelf
 4. add new book form
 5. remove book button
 6. update book detail button
+7. book api backend
+8. book storage database (Mongo? )

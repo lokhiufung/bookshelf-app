@@ -1,4 +1,6 @@
-import React from "react"
+import React from "react";
+// import InputBase from "@material-ui/core/InputBase";
+
 
 
 class SearchBar extends React.Component {
@@ -9,6 +11,7 @@ class SearchBar extends React.Component {
     render() {
         return (
             <input type="text" id="search-bar" placeholder="book name, author, or any #tag!"></input>
+            // <InputBase />
         )
     }
 }
