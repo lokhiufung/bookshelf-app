@@ -1,6 +1,6 @@
 import React from "react"
 import SearchBar from "./searchBar.js"
-// import SearchResult from ".searchResult.js"
+import Bookshelf from "./bookshelf.js"
 
 
 class App extends React.Component {
@@ -16,11 +16,11 @@ class App extends React.Component {
 			<div className="App">
 				<h1>Book Shelf</h1>
                 <div className="search-bar">
-                    <SearchBar />
+                    <SearchBar onChange={() => handleSearch()}/>
                 </div>
-				{/* <div className="search-result">
-					<SearchResult />
-				</div> */}
+				<div className="search-results">
+					<Bookshelf books={this.searchResults}/>
+				</div>
 			</div>
 		)
 		
