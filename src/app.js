@@ -1,12 +1,16 @@
 import React from "react"
 import SearchBar from "./searchBar.js"
+// import SearchResult from ".searchResult.js"
 
 
 class App extends React.Component {
 	constructor(props) {
 		super(props);
+		this.state = {
+			books: [],
+		}
 	}
-
+	
 	render() {
 		return (
 			<div className="App">
@@ -14,6 +18,9 @@ class App extends React.Component {
                 <div className="search-bar">
                     <SearchBar />
                 </div>
+				{/* <div className="search-result">
+					<SearchResult />
+				</div> */}
 			</div>
 		)
 		
