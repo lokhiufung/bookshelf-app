@@ -2,16 +2,16 @@ import React from "react"
 
 
 function Book(props) {
-    const tags = props.tags.map((step, tag) => {
-        <li>{tag}</li>
+    const tags = props.tags.map((tag) => {
+        return (
+        <div>{tag}</div>
+        )
     })
     return (
-        <li>
-            <div className="book">
-                <div className="book-title" href={props.url}>{props.title}</div>
-                <dic className="book-tags">{tags}</dic>
-            </div>
-        </li>
+        <div className="book">
+            <div className="book-title"><a className="book-url" href={props.url} target="_blank">{props.title}</a></div>
+            <div className="book-tags">{tags}</div>
+        </div>
     )
 }
 

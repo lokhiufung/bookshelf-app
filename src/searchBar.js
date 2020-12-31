@@ -5,7 +5,7 @@ import React from "react";
 
 function SearchBar(props) {
     return (
-        <input type="text" id="search-bar" placeholder="book name, author, or any #tag!" onChange={() => props.onChange()}></input>
+        <input type="text" id="search-bar" placeholder="book name, author, or any #tag!" onChange={props.onChange} value={props.value}></input>
     )
 
 }
