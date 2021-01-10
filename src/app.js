@@ -1,17 +1,12 @@
 import React from "react"
+// import Container from '@material-ui/core/Container';
+import { Route } from 'react-router-dom'
+
 import SearchBar from "./searchBar.js"
 import Bookshelf from "./bookshelf.js"
 import {search, create, update, remove} from "./bookApi.js"
 
-// class SearchBooks extends React.Component {
-// 	constructor(props) {}
-
-// 	render() {
-// 		return (
-// 			<input type="text" id="search-bar" placeholder="book name, author, or any #tag!" onChange={() => props.onChange()}></input>
-// 		)
-// 	}
-// }
+import "./style.css"
 
 
 class App extends React.Component {
@@ -38,16 +33,14 @@ class App extends React.Component {
 
 	render() {
 		const {books, searchValue} = this.state;
+
 		return (
-			<div className="App">
+			<div className="app">
 				<h1>Book Shelf</h1>
-				{/* <SearchBooks /> */}
-                <div className="search-bar">
-                    <SearchBar value={searchValue} onChange={this.handleSearch}/>
-                </div>
-				<div className="search-results">
-					<Bookshelf books={books}/>
-				</div>
+				<Route exact path="/" render={()=>(
+					// <SearchBar query={searchValue} ={this.handleSearch}/>
+					<Bookshelf query={searhcValue} submitQuery={this.handleSearch} books={books}/>
+				)}/>
 			</div>
 		)
 		
