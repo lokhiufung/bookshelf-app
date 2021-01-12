@@ -21,7 +21,7 @@ function Bookshelf(props) {
         <div className="bookshelf">
             <h1>Bookshelf</h1>
             <div className="search-bar-container">
-                <input type="text" id="search-bar" placeholder="book name, author, or any #tag!" onChange={(event)=>submitQuery(event)} value={query}></input>
+                <input type="text" id="search-bar" placeholder="book name, author, or any #tag! (Temp: #tag search only !)" onChange={(event)=>submitQuery(event)} value={query}></input>
                 {/* <SearchBar submitQuery={submitQuery} query={query}/> */}
             </div>
 

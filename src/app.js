@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom'
 // import SearchBar from "./searchBar.js"
 import Bookshelf from "./bookshelf.js"
 import AddBook from "./addBook.js"
-import {search, create, update, remove} from "./bookApi.js"
+import {search} from "./bookApi.js"
 
 import "./style.css"
 
@@ -14,7 +14,7 @@ class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.handleSearch = this.handleSearch.bind(this);
-		this.handleAddBook = this.handleAddBook.bind(this);
+		// this.handleAddBook = this.handleAddBook.bind(this);
 		this.state = {
 			books: [],
 			searchValue: ""
@@ -22,22 +22,31 @@ class App extends React.Component {
 	}
 	
 	async handleSearch(event) {
-		const searchValue = event.target.value;
-		this.setState({searchValue: searchValue})
 
-		const bookFilter = {
-			title: this.state.searchValue
+		const searchValue = event.target.value;
+		this.setState({searchValue: searchValue});
+		// temp: tags search only
+		let bookFilter = {
+			tags: [],
 		}
+		if (this.state.searchValue.includes("#")) {
+			const tags = this.state.searchValue.split(/\s+/).filter(tag => tag);
+			const hashtags = tags.map(tag => (tag.charAt(0) === "#") ? tag:`#${tag}`);
+			bookFilter.tags = hashtags;
+		}
+		console.log(bookFilter);
+		
 		const searchResults = await search(bookFilter);
 		// console.log(searchResults);
 		this.setState((state) => ({books: searchResults}));
 	}
 
-	async handleAddBook(event) {
-		const BookToAdd = event.target.value;
+	// async handleAddBook(event) {
+	// 	const bookToAdd = event.target.value;
 
-		const addBookResults = await create(BookToAdd);
-	}
+	// 	console.log(bookToAdd);
+	// 	// const addBookResults = await create(bookToAdd);
+	// }
 
 	render() {
 		// console.log(this.state);
@@ -52,7 +61,7 @@ class App extends React.Component {
 				)}/>
 				<Route exact path="/addBook" render={()=>(
 					// <SearchBar query={searchValue} ={this.handleSearch}/>
-					<AddBook submitAddBook={this.handleAddBook}/>
+					<AddBook />
 				)}/>
 			</div>
 		)

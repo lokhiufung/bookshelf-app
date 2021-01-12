@@ -23,13 +23,14 @@ export const search = (bookFilter) =>
     }).then(res => res.json()).then(data => data.books)
 
     
-export const create = (book) =>
-    fetch(`${URL}/book`, {
+export const create = (bookList) =>
+    fetch(`${URL}/book/bulk`, {
         method: 'POST',
         headers: {
             ...headers,
             'Content-Type': 'application/json'
-        }
+        },
+        body: JSON.stringify(bookList)
     }).then(res => res.json())
 
 
