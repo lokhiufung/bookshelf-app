@@ -1,8 +1,9 @@
-/* .center {
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-} */
+:root {
+    --open-add-book-button-color: #e9e5de;
+    --open-add-book-button-color-hover: hsl(0, 0%, 96%);
+}
+
+
 h1 {
     margin: auto;
     width: 50%;
@@ -48,6 +49,78 @@ h1 {
     right: 25px;
     bottom:25px;
 }
+
+.open-add-book button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--open-add-book-button-color);
+    background-image: url('./icons/add.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 28px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    font-size: 0;
+    outline: 0;
+}
+
+.open-add-book button:hover {
+    background-color: var(--open-add-book-button-color-hover);
+  }
+
+.open-search {
+    position: fixed;
+    right: 25px;
+    bottom:25px;
+}
+
+.add-book-container {
+    margin: auto;
+    width: 50%;
+    height: 70%;
+    padding: 10px;
+    text-align: center;
+}
+
+.add-book-container form {
+    margin: auto;
+    width: 90%;
+    height: 70%;
+    padding: 10px;
+    /* text-align: center; */
+}
+
+.add-book-container form .input{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+}
+
+.add-book-container form input{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* .add-book-container form .label{
+    display:inline-block;
+    width:80px;
+    text-align: center;
+    padding: 14px 10px 0 0;
+    margin:0 0 7px 0;
+}
+
+.add-book-container form .input{
+    display:inline-block;
+    width:130px;
+    margin:0;
+    margin:0 0 7px 0;
+} */
+
 /* .bookshelf ol li{
 
 } */

@@ -31,7 +31,7 @@ function Bookshelf(props) {
                 </ol>
             </div>
             <div className="open-add-book">
-                <Link to="/addBook">add a book</Link>
+                <Link to="/addBook"><button>Add a book</button></Link>
             </div>
         </div>
     )
