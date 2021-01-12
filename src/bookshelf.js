@@ -1,70 +1,41 @@
 import React from "react"
-
-import SearchBar from "./searchBar.js"
+import { Link } from 'react-router-dom'
 import Book from "./book.js"
+import "./style.css"
 
 
-// function Bookshelf (props) {
-//     console.log(props);
-//     const books = props.books.map((book) => {
-//             return (
-// 				<div className="bookshelf">
-//                     <li>
-//                         <Book title={book.title} url={book.url} tags={book.tags}/>
-//                     </li>
-// 				</div>
-//             )
-//         })
-    
-//     return (
-//         // <div className="bookshelf">
-//         <ol>
-//             {books}
-//         </ol>                
-//         // </div>
-//     )
-// }
+function Bookshelf(props) {
 
-class Bookshelf extends React.Component {
-    constructor(props) {
-        super(props);
-        this.states = {
-            query: "",
-            books: []
-        }
-        this.updatedQuery = this.updatedQuery.bind(this)    
-        
-    }
-    
-    updatedQuery(query) {
-        this.setState({query: query.trim()});
-    }
-
-    render() {
-        const {submitQuery, books} = this.props
-        const {query} = this.state
-
-        const books = props.books.map((book) => {
-                        return (
-                            <div className="bookshelf">
-                                <li>
-                                    <Book title={book.title} url={book.url} tags={book.tags}/>
-                                </li>
-                            </div>
-                        )
-                    })
-                
+    const {query, submitQuery, books} = props;
+    const bookGrids = books.map((book) => {
         return (
-            <div className="search-bar-container">
-                <SearchBar submitQuery={submitQuery} query={query}/>
+            <div className="bookshelf">
+                <li>
+                    <Book title={book.title} url={book.url} tags={book.tags}/>
+                </li>
             </div>
-            // <div className="search-results">
-            //     <ol>
-            //         {books}
-            //     </ol>
-            // </div>
         )
-    }
+    })
+
+    return (
+        <div className="bookshelf">
+            <h1>Bookshelf</h1>
+            <div className="search-bar-container">
+                <input type="text" id="search-bar" placeholder="book name, author, or any #tag!" onChange={(event)=>submitQuery(event)} value={query}></input>
+                {/* <SearchBar submitQuery={submitQuery} query={query}/> */}
+            </div>
+
+            <div className="search-results">
+                <ol>
+                    {bookGrids}
+                </ol>
+            </div>
+            <div className="open-add-book">
+                <Link to="/addBook">add a book</Link>
+            </div>
+        </div>
+    )
 }
+
 
 export default Bookshelf;

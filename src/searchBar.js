@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 import './style.css'
 // import InputBase from "@material-ui/core/InputBase";
 
@@ -9,9 +9,7 @@ function SearchBar(props) {
     const {submitQuery, query} = props;
     
     return (
-		<div className="search-bar-input">
-            <input type="text" id="search-bar" placeholder="book name, author, or any #tag!" onChange={(event)=>submitQuery(event.target.value)} value={query}></input>
-        </div>
+        <input type="text" id="search-bar" placeholder="book name, author, or any #tag!" onChange={(event)=>submitQuery(event.target.value)} value={query}></input>
     )
 
 }

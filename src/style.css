@@ -7,6 +7,7 @@ h1 {
     margin: auto;
     width: 50%;
     padding: 10px;
+    text-align: center;
 }
 
 .app {
@@ -15,25 +16,38 @@ h1 {
     width: 100%;
 }
 
-.search-bar {
+.bookshelf {
     margin: auto;
-    height: 30%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
 }
 
-.search-bar input {
+.search-bar-container {
+    margin: auto;
+    height: 10%;
+    width: 90%;
+    text-align: center;
+}
+
+.search-bar-container input {
     margin: auto;
     width: 50%;
     padding: 10px;
 }
 
-
-.bookshelf {
+.search-results {
     margin: auto;
+    width: 50%;
     height: 70%;
-    width: 100%;
+    padding: 10px;
+    text-align: center;
 }
 
+.open-add-book {
+    position: fixed;
+    right: 25px;
+    bottom:25px;
+}
 /* .bookshelf ol li{
 
 } */

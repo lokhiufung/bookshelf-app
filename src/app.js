@@ -2,8 +2,9 @@ import React from "react"
 // import Container from '@material-ui/core/Container';
 import { Route } from 'react-router-dom'
 
-import SearchBar from "./searchBar.js"
+// import SearchBar from "./searchBar.js"
 import Bookshelf from "./bookshelf.js"
+import AddBook from "./addBook.js"
 import {search, create, update, remove} from "./bookApi.js"
 
 import "./style.css"
@@ -12,7 +13,8 @@ import "./style.css"
 class App extends React.Component {
 	constructor(props) {
 		super(props);
-		this.handleSearch = this.handleSearch.bind(this)
+		this.handleSearch = this.handleSearch.bind(this);
+		this.handleAddBook = this.handleAddBook.bind(this);
 		this.state = {
 			books: [],
 			searchValue: ""
@@ -31,15 +33,26 @@ class App extends React.Component {
 		this.setState((state) => ({books: searchResults}));
 	}
 
+	async handleAddBook(event) {
+		const BookToAdd = event.target.value;
+
+		const addBookResults = await create(BookToAdd);
+	}
+
 	render() {
+		// console.log(this.state);
 		const {books, searchValue} = this.state;
 
 		return (
 			<div className="app">
-				<h1>Book Shelf</h1>
+				{/* <h1>Book Shelf</h1> */}
 				<Route exact path="/" render={()=>(
 					// <SearchBar query={searchValue} ={this.handleSearch}/>
-					<Bookshelf query={searhcValue} submitQuery={this.handleSearch} books={books}/>
+					<Bookshelf query={searchValue} submitQuery={this.handleSearch} books={books}/>
+				)}/>
+				<Route exact path="/addBook" render={()=>(
+					// <SearchBar query={searchValue} ={this.handleSearch}/>
+					<AddBook submitAddBook={this.handleAddBook}/>
 				)}/>
 			</div>
 		)
