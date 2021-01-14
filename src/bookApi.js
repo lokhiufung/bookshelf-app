@@ -1,6 +1,7 @@
 // import dotenv from 'dotenv'
 
-const URL = "http://localhost:8000";
+// const bookUrl = "http://localhost:8000";
+const bookUrl = process.env.REACT_APP_BOOK_URL;
 
 let token = localStorage.token
 if (!token) {
@@ -13,7 +14,7 @@ const headers = {
 }
 
 export const search = (bookFilter) =>
-    fetch(`${URL}/book`, {
+    fetch(`${bookUrl}/book`, {
         method: 'POST',
         headers: {
             ...headers,
@@ -24,7 +25,7 @@ export const search = (bookFilter) =>
 
     
 export const create = (bookList) =>
-    fetch(`${URL}/book/bulk`, {
+    fetch(`${bookUrl}/book/bulk`, {
         method: 'POST',
         headers: {
             ...headers,
@@ -35,7 +36,7 @@ export const create = (bookList) =>
 
 
 export const update = (bookFilter, book) =>
-    fetch(`${URL}/book`, {
+    fetch(`${bookUrl}/book`, {
         method: 'PUT',
         headers: {
             ...headers,
@@ -46,7 +47,7 @@ export const update = (bookFilter, book) =>
 
 
 export const remove = (bookFilter) => 
-    fetch(`${URL}/book`, {
+    fetch(`${bookUrl}/book`, {
         method: 'DELETE',
         headers: {
             ...headers,
