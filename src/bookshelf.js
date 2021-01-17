@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from 'react-router-dom'
+import { Link, BrowserRouter } from 'react-router-dom'
 import Book from "./book.js"
 import "./style.css"
 
@@ -31,7 +31,9 @@ function Bookshelf(props) {
                 </ol>
             </div>
             <div className="open-add-book">
-                <Link to="/addBook"><button>Add a book</button></Link>
+                <BrowserRouter basename={process.env.PUBLIC_URL}>
+                    <Link to="/addBook"><button>Add a book</button></Link>
+                </BrowserRouter>
             </div>
         </div>
     )

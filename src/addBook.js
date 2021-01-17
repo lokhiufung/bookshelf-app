@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from 'react-router-dom'
+import { Link, BrowserRouter } from 'react-router-dom'
 import {create} from "./bookApi.js"
 import "./style.css"
 
@@ -86,7 +86,9 @@ class AddBook extends React.Component{
                     </span>
                 </form>
                 <div className="open-search">
-                    <Link to="/">back to search</Link>
+                    <BrowserRouter basename={process.env.PUBLIC_URL}>
+                        <Link to="/">back to search</Link>
+                    </BrowserRouter>
                 </div>
             </div>
         )

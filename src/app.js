@@ -1,6 +1,6 @@
 import React from "react"
 // import Container from '@material-ui/core/Container';
-import { Route } from 'react-router-dom'
+import { Route, BrowserRouter } from 'react-router-dom'
 
 // import SearchBar from "./searchBar.js"
 import Bookshelf from "./bookshelf.js"
@@ -55,14 +55,18 @@ class App extends React.Component {
 		return (
 			<div className="app">
 				{/* <h1>Book Shelf</h1> */}
-				<Route exact path="/" render={()=>(
-					// <SearchBar query={searchValue} ={this.handleSearch}/>
-					<Bookshelf query={searchValue} submitQuery={this.handleSearch} books={books}/>
-				)}/>
-				<Route exact path="/addBook" render={()=>(
-					// <SearchBar query={searchValue} ={this.handleSearch}/>
-					<AddBook />
-				)}/>
+				<BrowserRouter basename={process.env.PUBLIC_URL}>
+					<Route exact path="/" render={()=>(
+						// <SearchBar query={searchValue} ={this.handleSearch}/>
+						<Bookshelf query={searchValue} submitQuery={this.handleSearch} books={books}/>
+					)}/>
+				</BrowserRouter>
+				<BrowserRouter basename={process.env.PUBLIC_URL}>
+					<Route exact path="/addBook" render={()=>(
+						// <SearchBar query={searchValue} ={this.handleSearch}/>
+						<AddBook />
+					)}/>
+				</BrowserRouter>
 			</div>
 		)
 		
