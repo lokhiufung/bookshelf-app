@@ -29,6 +29,15 @@ class AddBook extends React.Component{
             description: this.state.description,
         }
         const addBookResults = await create([bookToAdd]);
+        
+        // reset states
+        this.setState({
+            title: "",
+            url: "",
+            tags: [],
+            description: "",
+        })
+        
 	}
 
     handleTitleChange(event) {
@@ -54,7 +63,8 @@ class AddBook extends React.Component{
         return (
             <div className="add-book-container">
                 <h1>Add a new book</h1>
-                <form>
+                {/* <form> */}
+                <div className="form">
                     <span>
                         <div className="label">Title</div>
                         <div className="input">
@@ -79,12 +89,13 @@ class AddBook extends React.Component{
                             <input type="text" id="description" placeholder="e.g This is for your attention~" onChange={this.handleDescriptionChange} required></input>
                         </div> 
                     </span>
-                    <span>
-                        <div className="add-button">
-                            <button type="submit" onClick={this.handleAddBook}>Add</button>
-                        </div>
-                    </span>
-                </form>
+                <span>
+                    <div className="add-button">
+                        <button type="submit" onClick={this.handleAddBook}>Add</button>
+                    </div>
+                </span>
+                </div>
+                {/* </form> */}
                 <div className="open-search">
                     {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
                     <Link to="/">back to search</Link>

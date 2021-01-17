@@ -83,7 +83,7 @@ h1 {
     text-align: center;
 }
 
-.add-book-container form {
+.add-book-container .form {
     margin: auto;
     width: 90%;
     height: 70%;
@@ -91,14 +91,14 @@ h1 {
     /* text-align: center; */
 }
 
-.add-book-container form .input{
+.add-book-container .form .input{
     margin: auto;
     width: 80%;
     padding: 10px;
     text-align: center;
 }
 
-.add-book-container form input{
+.add-book-container .form input{
     margin: auto;
     width: 80%;
     padding: 10px;
