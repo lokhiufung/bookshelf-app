@@ -86,9 +86,9 @@ class AddBook extends React.Component{
                     </span>
                 </form>
                 <div className="open-search">
-                    <BrowserRouter basename={process.env.PUBLIC_URL}>
-                        <Link to="/">back to search</Link>
-                    </BrowserRouter>
+                    {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
+                    <Link to="/">back to search</Link>
+                    {/* </BrowserRouter> */}
                 </div>
             </div>
         )

@@ -31,9 +31,9 @@ function Bookshelf(props) {
                 </ol>
             </div>
             <div className="open-add-book">
-                <BrowserRouter basename={process.env.PUBLIC_URL}>
-                    <Link to="/addBook"><button>Add a book</button></Link>
-                </BrowserRouter>
+                {/* <BrowserRouter basename={process.env.PUBLIC_URL}> */}
+                <Link to="/addBook"><button>Add a book</button></Link>
+                {/* </BrowserRouter> */}
             </div>
         </div>
     )
