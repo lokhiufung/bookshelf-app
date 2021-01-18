@@ -2,6 +2,10 @@
 A simple React bookshelf: please visit [here](https://lokhiufung.github.io/bookshelf-app) for demo
 
 
+## CRUD backend
+please visit [this](https://github.com/lokhiufung/bookshelf-backend) repo for more details. Written in python.
+
+
 ## Built with
 1. React
 2. Material-UI (**custom css style sheet temp)
@@ -15,7 +19,7 @@ A simple React bookshelf: please visit [here](https://lokhiufung.github.io/books
 5. remove book button
 6. update book detail button
 7. :ok: book api backend
-8. :ok: book storage database (Mongo? )
+8. :ok: book storage database (Mongo)
 
 
 ## Online resources
