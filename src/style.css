@@ -81,6 +81,7 @@ h1 {
     height: 70%;
     padding: 10px;
     text-align: center;
+    /* border: solid; */
 }
 
 .add-book-container .form {
